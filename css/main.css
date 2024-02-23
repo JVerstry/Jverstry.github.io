@@ -1,0 +1,157 @@
+
+/* Colors https://mycolor.space/?hex=%231D0E00&sub=1 */
+
+$dark-brown:		#090801;
+$brown:             #353430;
+$beige: 			#DBDAD5;
+$pastel: 			#94938E;
+$dark-green: 		#002727;
+$green: 			#2D4031;
+$light-rose:		#FFB1B2;
+$rose: 				#F17A7D;
+$red: 				#4B0F20;
+	
+$white:				#FFFFFD;
+$black:				#010100;
+
+$dark-blue: 		#01081a; /* #0D1126; */
+$dark-blue-I:       #2762F7;
+$dark-blue-II:      #7197FA;
+$dark-blue-III:     #9DB8FB;
+$dark-blue-IV:      #C4D4FD;
+
+$dark-purple: 		#4C2D4F;
+$dark-rose: 		#974964;
+$orange: 			#D77364;
+$light-orange: 		#FBB05D;
+$yellow: 			#FFEECB;
+$blue: 				#21283a;
+$dark-mauve: 		#292A3E;
+$mauve: 			#534A64;
+$light-mauve: 		#5D4D6E;
+$light-mauve:       #836D8B;
+$very-light-mauve:	#B791B0;
+$pink: 				#EEB7D4;
+$ocre: 				#D7A31A;
+$light-aqua: 		#5DECBF;
+$aqua: 				#00A3AC;
+$dark-aqua: 		#00516B;
+$dark-green-II: 	#003037;
+$dark-grey: 		#444655;
+$light-grey: 		#A9AABC;
+$grey: 				#757687;
+$shade-I: 			#2E3444;
+$shade-II: 			#5C6173;
+$shade-III: 		#8D93A5;
+$shade-IV: 			#C1C7DB;
+
+/* Global */
+
+body {
+    color: $black;
+	background-color: $dark-blue;
+}
+
+html {
+    font-size: calc(15px + 0.390625vw);
+}
+
+* {
+    box-sizing: border-box;
+	font-family: 'Alike', serif;	
+}
+
+$bh: 40px;
+$bw: 140px;
+$bp: 5px;
+
+button {
+	height: $bh;
+	width: $bw;
+	padding: $bp;
+	margin: $bp;
+	border: none;
+}
+
+/* color classes */
+
+.dark-brown{ background-color: $dark-brown; color: $white;  }
+.beige{ background-color: $beige; color: $black;  }
+.pastel{ background-color: $pastel; color: $white;  }
+.dark-green{ background-color: $dark-green; color: $white;  }
+.green{ background-color: $green; color: $white;  }
+.light-rose{ background-color: $light-rose; color: $white;  }
+.rose{ background-color: $rose; color: $white;  }
+.red{ background-color: $red; color: $white;  }
+	
+.white{ background-color: $white; color: $black;  }
+.black{ background-color: $black; color: $white;  }
+
+.dark-blue{ background-color: $dark-blue; color: $white;  }
+.dark-blue-I{ background-color: $dark-blue-I; color: $white;  }
+.dark-blue-II{ background-color: $dark-blue-II; color: $white;  }
+.dark-blue-III{ background-color: $dark-blue-III; color: $white;  }
+.dark-blue-IV{ background-color: $dark-blue-IV; color: $black;  }
+
+.dark-purple{ background-color: $dark-purple; color: $white;  }
+.dark-rose{ background-color: $dark-rose; color: $white;  }
+.orange{ background-color: $orange; color: $white;  }
+.light-orange{ background-color: $light-orange; color: $black;  }
+.yellow{ background-color: $yellow; color: $black;  }
+.blue{ background-color: $blue; color: $white;  }
+.mauve{ background-color: $mauve; color: $white;  }
+.light-mauve{ background-color: $light-mauve; color: $white;  }
+.very-light-mauve{ background-color: $very-light-mauve; color: $white;  }
+.pink{ background-color: $pink; color: $white;  }
+.ocre{ background-color: $ocre; color: $white;  }
+.aqua{ background-color: $aqua; color: $white;  }
+.dark-aqua{ background-color: $dark-aqua; color: $white;  }
+.dark-green-II{ background-color: $dark-green-II; color: $white;  }
+.dark-grey{ background-color: $dark-grey; color: $white;  }
+.light-grey{ background-color: $light-grey; color: $white;  }
+.grey{ background-color: $grey; color: $white;  }
+.shade-I{ background-color: $shade-I; color: $white;  }
+.shade-II{ background-color: $shade-II; color: $white;  }
+.shade-III{ background-color: $shade-III; color: $white;  }
+.shade-IV{ background-color: $shade-IV; color: $black;  }
+
+/* Breakpoints */
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+}
+
+/* Main content */ 
+
+#dw-main-table {
+    background-color: $white;
+    margin-left: auto;
+    margin-right: auto;
+	border-collapse: collapse;
+}
+
+#dw-top-row {
+    background-color: $white;
+    color: $black;
+}
+
+#dw-bottom-row {
+    background-color: $blue;
+    color: $white;
+}
