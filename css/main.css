@@ -1,6 +1,9 @@
 
 /* Colors https://mycolor.space/?hex=%231D0E00&sub=1 */
 
+$navy-blue          #000080;
+$navy-light         #3939FF;
+
 $dark-brown:		#090801;
 $brown:             #353430;
 $beige: 			#DBDAD5;
@@ -73,7 +76,17 @@ button {
 	border: none;
 }
 
+/* Generics */
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
 /* color classes */
+
+.navy-blue{ background-color: $navy-blue; color: $white;  }
+.navy-light{ background-color: $navy-light; color: $white;  }
 
 .dark-brown{ background-color: $dark-brown; color: $white;  }
 .beige{ background-color: $beige; color: $black;  }
@@ -89,7 +102,7 @@ button {
 
 .dark-blue{ background-color: $dark-blue; color: $white;  }
 .dark-blue-I{ background-color: $dark-blue-I; color: $white;  }
-.dark-blue-II{ background-color: $dark-blue-II; color: $white;  }
+.dark-blue-II{ background-color: $dark-blue-II; color: $white;  } #7197FA
 .dark-blue-III{ background-color: $dark-blue-III; color: $white;  }
 .dark-blue-IV{ background-color: $dark-blue-IV; color: $black;  }
 

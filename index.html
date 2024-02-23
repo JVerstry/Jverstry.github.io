@@ -28,12 +28,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Alike&display=swap" rel="stylesheet">
-<style amp-custom>/* Colors https://mycolor.space/?hex=%231D0E00&sub=1 */
-/* #0D1126; */
+<style amp-custom>
 /* Global */
 body {
   color: #010100;
-  background-color: #01081a;
+  background-color: navy-blue;
 }
 html {
   font-size: calc(15px + 0.390625vw);
@@ -43,15 +42,14 @@ html {
   font-family: 'Alike', serif;
 }
 button {
-  height: 40px;
-  width: 140px;
-  padding: 5px;
-  margin: 5px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 8px;
+  padding-right: 8px;
+  margin-left: 1px;
+  margin-right: 1px;
+  border-radius: 1px;
   border: none;
-}
-.shade-IV {
-  background-color: #C1C7DB;
-  color: #010100;
 }
 /* Breakpoints */
 /* Extra small devices (phones, 600px and down) */
@@ -61,6 +59,7 @@ button {
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 /* Main content */
 #dw-main-table {
+  width: 96%;
   background-color: #FFFFFD;
   margin-left: auto;
   margin-right: auto;
@@ -74,6 +73,16 @@ button {
   background-color: #21283a;
   color: #FFFFFD;
 }
+#dw-middle-middle-cell {
+  vertical-align: top;
+  text-align: left;
+}
+#dw-middle-right-cell {
+  vertical-align: top;
+  text-align: left;
+}
+.dark-blue-II{ background-color: #7197FA; color: #FFFFFD;  }
+
 </style>
 </head>
 <body>
@@ -87,9 +96,120 @@ button {
   <tr id="dw-middle-row">
     <th id="dw-middle-left-cell">MID LEFT</th>
     <th id="dw-middle-middle-cell">
-<h1>My index page!</h1>
-</th>
-    <th id="dw-middle-right-cell">MID RIGHT</th>
+
+      <table id="dw-inner-table">
+        <tr><th></th><th></th><th></th></tr>
+
+        <tr><th>Inflation</th>
+        <th><button class="dark-blue-II">+</button>
+        <button class="dark-blue-II">-</button>
+          </th>
+        <th>
+          Up Sideways Down
+        </th>
+        </tr>
+        <tr>
+          <th>Gold</th>
+          <th><button class="dark-blue-II">+</button>
+          <button class="dark-blue-II">-</button>
+          </th>
+          <th>
+            Up Sideways Down
+          </th>
+        </tr>
+        <tr><th>ETH</th>
+          <th><button class="dark-blue-II">+</button>
+          <button class="dark-blue-II">-</button>
+          </th>
+          <th>
+            Up Sideways Down
+          </th>
+        </tr>
+        <tr><th>BTC</th>
+          <th><button class="dark-blue-II">+</button>
+          <button class="dark-blue-II">-</button>
+          </th>
+          <th>
+            Up Sideways Down
+          </th>
+        </tr>
+        <tr><th>US interest</th>
+          <th><button class="dark-blue-II">+</button>
+          <button class="dark-blue-II">-</button>
+          </th>
+          <th>
+            Up Sideways Down
+          </th>
+        </tr>
+        <tr><th>Real interest</th>
+          <th><button class="dark-blue-II">+</button>
+          <button class="dark-blue-II">-</button>
+          </th>
+          <th>
+            Up Sideways Down
+          </th>
+        </tr>
+        <tr><th>Real estate</th>
+          <th><button class="dark-blue-II">+</button>
+          <button class="dark-blue-II">-</button>
+          </th>
+          <th>
+            Up Sideways Down
+          </th>
+        </tr>
+        <tr><th>Oil</th>
+          <th><button class="dark-blue-II">+</button>
+          <button class="dark-blue-II">-</button>
+          </th>
+          <th>
+            Up Sideways Down
+          </th>
+        </tr>
+        <tr><th>Sentiment</th>
+          <th><button class="dark-blue-II">+</button>
+          <button class="dark-blue-II">-</button>
+          </th>
+          <th>
+            Up Sideways Down
+          </th>
+        <tr>
+          <th>M2</th>
+          <th><button class="dark-blue-II">+</button>
+          <button class="dark-blue-II">-</button>
+          </th>
+          <th>
+            Up Sideways Down
+          </th>
+        </tr>
+      
+        <tr>
+          <th>Unemployment</th>
+          <th><button class="dark-blue-II">+</button>
+          <button class="dark-blue-II">-</button></th>
+          <th>
+            Up Sideways Down
+          </th>
+        </tr>
+
+        <tr><th></th><th></th><th></th></tr>
+    </table>
+
+    </th>
+
+    </th>
+    <th id="dw-middle-right-cell">
+
+      <table id="dw-right-table">
+        <tr></tr>
+        <tr><th>BTC</th></tr>
+        <tr><th>ETH</th></tr>
+        <tr><th>Gold</th></tr>
+        <tr><th>Oil</th></tr>
+        <tr><th>Real estate</th></tr>
+        <tr></tr>
+      </table>
+
+    </th>
   </tr>
   <tr id="dw-bottom-row">
     <th id="dw-bottom-left-cell">BOTTOM LEFT</th>
@@ -98,6 +218,5 @@ button {
   </tr>
 </table>
 <br />
-<button class="shade-IV">dark-brown</button>
 </body>
 </html>
