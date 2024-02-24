@@ -5,29 +5,17 @@
 <link rel="canonical" href="/index.html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <META NAME="robots" CONTENT="noindex">
-<title>Welcome to DataWinds</title>
-<script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [{
-        "@type": "ListItem",
-        "position": 1,
-        "name": "DataWinds",
-        "item": "https://datawinds.cafe"
-      },{
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Home",
-        "item": "https://datawinds.cafe/index.html"
-      }]
-    }
-</script>
+<title>DataWinds</title>
 <script async src="https://cdn.ampproject.org/v0.js"></script>
 <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Alike&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Symbols+2&display=swap" rel="stylesheet">
+<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="img/favicon/favicon-48x48.png">
+<link rel="icon" type="image/png" sizes="192x192" href="img/favicon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="228x228" href="img/favicon/favicon-228x228.png">
 <style amp-custom>
 /* Global */
 body {
@@ -35,11 +23,11 @@ body {
   background-color: navy-blue;
 }
 html {
-  font-size: calc(15px + 0.390625vw);
+  font-size: calc(14px); /* + 0.290625vw); */
 }
 * {
   box-sizing: border-box;
-  font-family: 'Alike', serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 button {
   padding-top: 1px;
@@ -50,6 +38,12 @@ button {
   margin-right: 1px;
   border-radius: 1px;
   border: none;
+}
+th, td {
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 3px;
+  padding-right: 3px;
 }
 /* Breakpoints */
 /* Extra small devices (phones, 600px and down) */
@@ -66,11 +60,17 @@ button {
   border-collapse: collapse;
 }
 #dw-top-row {
-  background-color: #FFFFFD;
-  color: #010100;
+  background-color: #21283a;
+  color: #FFFFFD;
 }
 #dw-bottom-row {
   background-color: #21283a;
+  color: #FFFFFD;
+}
+#dw-middle-left-cell {
+  vertical-align: top;
+  text-align: left;
+  background-color: #7197FA;
   color: #FFFFFD;
 }
 #dw-middle-middle-cell {
@@ -81,12 +81,41 @@ button {
   vertical-align: top;
   text-align: left;
 }
-.dark-blue-II{ background-color: #7197FA; color: #FFFFFD;  }
-
+.pmCss {
+  background-color: #7197FA;
+  color: #FFFFFD;
+  font-weight: bold;
+}
+.arrow {
+  font-family: "Noto Sans Symbols 2", sans-serif;
+  font-weight: bold;
+  vertical-align: bottom;
+  text-align: left;
+}
 </style>
 </head>
 <body>
 <br />
+<script>
+  const INFLATION = 1;
+  const GOLD = 2;
+  const ETH = 3;
+  const BTC = 4;
+  const US_INTEREST = 5;
+  const REAL_INTEREST = 6;
+  const REAL_ESTATE = 7;
+  const OIL = 8;
+  const US_SENTIMENT = 9;
+  const M2 = 10;
+  const UNEMPLOYMENT = 11;
+
+  const tail_wind = '\u21C8';
+  const mid_tail_wind = '\u2191';
+  const sideways_wind = '\u219D';
+  const mid_front_wind = '\u2193';
+  const front_wind = '\u21CA';
+  
+</script>
 <table id="dw-main-table">
   <tr id="dw-top-row">
     <th id="dw-top-left-cell">TOP LEFT</th>
@@ -101,94 +130,94 @@ button {
         <tr><th></th><th></th><th></th></tr>
 
         <tr><th>Inflation</th>
-        <th><button class="dark-blue-II">+</button>
-        <button class="dark-blue-II">-</button>
-          </th>
         <th>
-          Up Sideways Down
+          <button onclick="plusClick('infl')" id="plus-infl" class="pmCss">+</button>
+          <button onclick="minusClick('infl')" id="minus-infl" class="pmCss">-</button>
         </th>
+        <th id="direction-inlf">Sideways</th>
+        <th id="arrow-infl" class="arrow">&#x219D;</th>
         </tr>
         <tr>
           <th>Gold</th>
-          <th><button class="dark-blue-II">+</button>
-          <button class="dark-blue-II">-</button>
-          </th>
           <th>
-            Up Sideways Down
+            <button onclick="plusClick('gold')" id="plus-gold" class="pmCss">+</button>
+            <button onclick="minusClick('gold')" id="minus-gold" class="pmCss">-</button>
           </th>
+          <th id="direction-gold">Sideways</th>
+          <th id="arrow-gold" class="arrow">&#x219D;</th>
         </tr>
         <tr><th>ETH</th>
-          <th><button class="dark-blue-II">+</button>
-          <button class="dark-blue-II">-</button>
-          </th>
           <th>
-            Up Sideways Down
+            <button onclick="plusClick('eth')" id="plus-eth" class="pmCss">+</button>
+            <button onclick="minusClick('eth')" id="minus-eth" class="pmCss">-</button>
           </th>
+          <th id="direction-eth">Sideways</th>
+          <th id="arrow-eth" class="arrow">&#x219D;</th>
         </tr>
         <tr><th>BTC</th>
-          <th><button class="dark-blue-II">+</button>
-          <button class="dark-blue-II">-</button>
-          </th>
           <th>
-            Up Sideways Down
+            <button onclick="plusClick('btc')" id="plus-btc" class="pmCss">+</button>
+            <button onclick="minusClick('btc')" id="minus-btc" class="pmCss">-</button>
           </th>
+          <th id="direction-btc">Sideways</th>
+          <th id="arrow-btc" class="arrow">&#x219D;</th>
         </tr>
-        <tr><th>US interest</th>
-          <th><button class="dark-blue-II">+</button>
-          <button class="dark-blue-II">-</button>
-          </th>
+        <tr><th>US rate</th>
           <th>
-            Up Sideways Down
+            <button onclick="plusClick('us-rate')" id="plus-us-rate" class="pmCss">+</button>
+            <button onclick="minusClick('us-rate')" id="minus-us-rate" class="pmCss">-</button>
           </th>
+          <th id="direction-us-rate">Sideways</th>
+          <th id="arrow-us-rate" class="arrow">&#x219D;</th>
         </tr>
         <tr><th>Real interest</th>
-          <th><button class="dark-blue-II">+</button>
-          <button class="dark-blue-II">-</button>
-          </th>
           <th>
-            Up Sideways Down
+            <button onclick="plusClick('real-rate')" id="plus-real-rate" class="pmCss">+</button>
+            <button onclick="minusClick('real-rate')" id="minus-real-rate" class="pmCss">-</button>
           </th>
+          <th id="direction-real-rate">Sideways</th>
+          <th id="arrow-real-rate" class="arrow">&#x219D;</th>
         </tr>
         <tr><th>Real estate</th>
-          <th><button class="dark-blue-II">+</button>
-          <button class="dark-blue-II">-</button>
-          </th>
           <th>
-            Up Sideways Down
+            <button onclick="plusClick('real-estate')" id="plus-real-estate" class="pmCss">+</button>
+            <button onclick="minusClick('real-estate')" id="minus-real-estate" class="pmCss">-</button>
           </th>
+          <th id="direction-real-estate">Sideways</th>
+          <th id="arrow-real-estate" class="arrow">&#x219D;</th>
         </tr>
         <tr><th>Oil</th>
-          <th><button class="dark-blue-II">+</button>
-          <button class="dark-blue-II">-</button>
-          </th>
           <th>
-            Up Sideways Down
+            <button onclick="plusClick('oil')" id="plus-oil" class="pmCss">+</button>
+            <button onclick="minusClick('oil')" id="minus-oil" class="pmCss">-</button>
           </th>
+          <th id="direction-oil">Sideways</th>
+          <th id="arrow-oil" class="arrow">&#x219D;</th>
         </tr>
         <tr><th>Sentiment</th>
-          <th><button class="dark-blue-II">+</button>
-          <button class="dark-blue-II">-</button>
-          </th>
           <th>
-            Up Sideways Down
+            <button onclick="plusClick('sentiment')" id="plus-sentiment" class="pmCss">+</button>
+            <button onclick="minusClick('sentiment')" id="minus-sentiment" class="pmCss">-</button>
           </th>
+          <th id="direction-sentiment">Sideways</th>
+          <th id="arrow-sentiment" class="arrow">&#x219D;</th>
         <tr>
           <th>M2</th>
-          <th><button class="dark-blue-II">+</button>
-          <button class="dark-blue-II">-</button>
-          </th>
           <th>
-            Up Sideways Down
+            <button onclick="plusClick('m2')" id="plus-m2" class="pmCss">+</button>
+            <button onclick="minusClick('m2')" id="minus-m2" class="pmCss">-</button>
           </th>
+          <th id="direction-m2">Sideways</th>
+          <th id="arrow-m2" class="arrow">&#x219D;</th>
         </tr>
-      
         <tr>
           <th>Unemployment</th>
-          <th><button class="dark-blue-II">+</button>
-          <button class="dark-blue-II">-</button></th>
           <th>
-            Up Sideways Down
+            <button onclick="plusClick('unemp')" id="plus-unemp" class="pmCss">+</button>
+            <button onclick="minusClick('unemp')" id="minus-unemp" class="pmCss">-</button>
           </th>
+          <th id="direction-unemp">Sideways</th>
+          <th id="arrow-unemp" class="arrow">&#x219D;</th>
         </tr>
 
         <tr><th></th><th></th><th></th></tr>
@@ -218,5 +247,64 @@ button {
   </tr>
 </table>
 <br />
+<script>
+
+  function windText(input) {
+    switch(input) {
+      case tail_wind:
+        return "Tail wind";
+      case mid_tail_wind:
+        return "Tail break";
+      case sideways_wind:
+        return "Sideways";
+      case mid_front_wind:
+        return "Front break";
+      case front_wind:
+        return "Front wind";
+    }
+    return " ";
+  }
+
+  function nextPlus(current) {
+      switch(current) {
+        case mid_tail_wind:
+          return tail_wind;
+        case sideways_wind:
+          return mid_tail_wind;
+        case mid_front_wind:
+          return sideways_wind;
+        case front_wind:
+          return mid_front_wind;
+    }
+    return tail_wind;
+  }
+
+  function nextMinus(current) {
+    switch(current) {
+      case tail_wind:
+        return mid_tail_wind;
+      case mid_tail_wind:
+        return sideways_wind;
+      case sideways_wind:
+        return mid_front_wind;
+      case mid_front_wind:
+        return front_wind;
+    }
+    return front_wind;
+  }
+
+  function plusClick(suffix) {
+    dirElem = document.getElementById("direction-"+suffix);
+    arrowElem = document.getElementById("arrow-"+suffix);
+    arrowElem.innerHTML = nextPlus(arrowElem.innerHTML)
+  }
+  
+  function minusClick(suffix) {
+    dirElem = document.getElementById("direction-"+suffix);
+    arrowElem = document.getElementById("arrow-"+suffix);
+    arrowElem.innerHTML = nextMinus(arrowElem.innerHTML)
+  }
+</script>
+
 </body>
 </html>
