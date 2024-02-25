@@ -11,6 +11,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Symbols+2&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Chelsea+Market&display=swap" rel="stylesheet">
 <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-icon-180x180.png">
 <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="48x48" href="img/favicon/favicon-48x48.png">
@@ -58,6 +59,12 @@ th, td {
   margin-left: auto;
   margin-right: auto;
   border-collapse: collapse;
+  border-radius: 20px;
+}
+.dw-main-table-left {
+  width: 200px;
+}
+.dw-main-table-right {  
 }
 #dw-top-row {
   background-color: #21283a;
@@ -66,6 +73,13 @@ th, td {
 #dw-bottom-row {
   background-color: #21283a;
   color: #FFFFFD;
+  height: 30px;
+}
+#dw-top-middle-cell {
+  font-family: "Chelsea Market", system-ui;
+  font-size: 40px;
+  text-align: left;
+  padding-left: 8px
 }
 #dw-middle-left-cell {
   vertical-align: top;
@@ -92,6 +106,13 @@ th, td {
   vertical-align: bottom;
   text-align: left;
 }
+.flag {
+  border-radius: 20px;
+  background-position: center center;
+  padding: 8px;
+  width: 153px;
+  height: 78px;
+}
 </style>
 </head>
 <body>
@@ -114,16 +135,19 @@ th, td {
   const sideways_wind = '\u219D';
   const mid_front_wind = '\u2193';
   const front_wind = '\u21CA';
-  
+    
 </script>
+<!-- Low energy price = more business -->
 <table id="dw-main-table">
   <tr id="dw-top-row">
-    <th id="dw-top-left-cell">TOP LEFT</th>
-    <th id="dw-top-middle-cell">TOP MIDDLE</th>
-    <th id="dw-top-right-cell">TOP RIGHT</th>
+    <th id="dw-top-left-cell" class="dw-main-table-left">
+      <img src="img/FlatButton-235x120.png" class="flag"></img>
+    </th>
+    <th id="dw-top-middle-cell">Data Winds</th>
+    <th id="dw-top-right-cell"></th>
   </tr>
   <tr id="dw-middle-row">
-    <th id="dw-middle-left-cell">MID LEFT</th>
+    <th id="dw-middle-left-cell" class="dw-main-table-left"></th>
     <th id="dw-middle-middle-cell">
 
       <table id="dw-inner-table">
@@ -134,7 +158,7 @@ th, td {
           <button onclick="plusClick('infl')" id="plus-infl" class="pmCss">+</button>
           <button onclick="minusClick('infl')" id="minus-infl" class="pmCss">-</button>
         </th>
-        <th id="direction-inlf">Sideways</th>
+        <th id="direction-infl">Sideways</th>
         <th id="arrow-infl" class="arrow">&#x219D;</th>
         </tr>
         <tr>
@@ -241,9 +265,9 @@ th, td {
     </th>
   </tr>
   <tr id="dw-bottom-row">
-    <th id="dw-bottom-left-cell">BOTTOM LEFT</th>
-    <th id="dw-bottom-middle-cell">BOTTOM MID</th>
-    <th id="dw-bottom-right-cell">BOTTOM RIGHT</th>
+    <th id="dw-bottom-left-cell" class="dw-main-table-left"></th>
+    <th id="dw-bottom-middle-cell"></th>
+    <th id="dw-bottom-right-cell"></th>
   </tr>
 </table>
 <br />
@@ -294,15 +318,17 @@ th, td {
   }
 
   function plusClick(suffix) {
-    dirElem = document.getElementById("direction-"+suffix);
     arrowElem = document.getElementById("arrow-"+suffix);
-    arrowElem.innerHTML = nextPlus(arrowElem.innerHTML)
+    arrowElem.innerHTML = nextPlus(arrowElem.innerHTML);
+    dirElem = document.getElementById("direction-"+suffix);
+    dirElem.innerHTML = windText(arrowElem.innerHTML)
   }
   
   function minusClick(suffix) {
-    dirElem = document.getElementById("direction-"+suffix);
     arrowElem = document.getElementById("arrow-"+suffix);
     arrowElem.innerHTML = nextMinus(arrowElem.innerHTML)
+    dirElem = document.getElementById("direction-"+suffix);
+    dirElem.innerHTML = windText(arrowElem.innerHTML)
   }
 </script>
 
