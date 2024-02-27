@@ -61,10 +61,21 @@ th, td {
   border-collapse: collapse;
   border-radius: 20px;
 }
+#dw-inner-table {
+  border-collapse: collapse;
+}
 .dw-main-table-left {
   width: 200px;
 }
-.dw-main-table-right {  
+.dw-main-table-right-I {
+  margin-left: auto;
+  margin-right: auto;
+  border-collapse: collapse;  
+}
+.dw-main-table-right-II {
+  margin-left: auto;
+  margin-right: auto;
+  border-collapse: collapse;  
 }
 #dw-top-row {
   background-color: #21283a;
@@ -74,6 +85,9 @@ th, td {
   background-color: #21283a;
   color: #FFFFFD;
   height: 30px;
+}
+.trUnderline {
+  border-bottom: 2pt solid #21283a;  
 }
 #dw-top-middle-cell {
   font-family: "Chelsea Market", system-ui;
@@ -91,7 +105,11 @@ th, td {
   vertical-align: top;
   text-align: left;
 }
-#dw-middle-right-cell {
+#dw-middle-right-cell-I {
+  vertical-align: top;
+  text-align: left;
+}
+#dw-middle-right-cell-II {
   vertical-align: top;
   text-align: left;
 }
@@ -118,17 +136,6 @@ th, td {
 <body>
 <br />
 <script>
-  const INFLATION = 1;
-  const GOLD = 2;
-  const ETH = 3;
-  const BTC = 4;
-  const US_INTEREST = 5;
-  const REAL_INTEREST = 6;
-  const REAL_ESTATE = 7;
-  const OIL = 8;
-  const US_SENTIMENT = 9;
-  const M2 = 10;
-  const UNEMPLOYMENT = 11;
 
   const tail_wind = '\u21C8';
   const mid_tail_wind = '\u2191';
@@ -144,23 +151,72 @@ th, td {
       <img src="img/FlatButton-235x120.png" class="flag"></img>
     </th>
     <th id="dw-top-middle-cell">Data Winds</th>
-    <th id="dw-top-right-cell"></th>
+    <th id="dw-top-right-cell-I"></th>
+    <th id="dw-top-right-cell-II"></th>
   </tr>
   <tr id="dw-middle-row">
     <th id="dw-middle-left-cell" class="dw-main-table-left"></th>
     <th id="dw-middle-middle-cell">
 
       <table id="dw-inner-table">
-        <tr><th></th><th></th><th></th></tr>
+        <tr class="trUnderline"><th></th><th></th><th></th><th></th></tr>
 
-        <tr><th>Inflation</th>
-        <th>
-          <button onclick="plusClick('infl')" id="plus-infl" class="pmCss">+</button>
-          <button onclick="minusClick('infl')" id="minus-infl" class="pmCss">-</button>
-        </th>
-        <th id="direction-infl">Sideways</th>
-        <th id="arrow-infl" class="arrow">&#x219D;</th>
+        <tr><th>Bank lending</th>
+          <th>
+            <button onclick="plusClick('bankl')" id="plus-bankl" class="pmCss">+</button>
+            <button onclick="minusClick('bankl')" id="minus-bankl" class="pmCss">-</button>
+          </th>
+          <th id="direction-bankl">Sideways</th>
+          <th id="arrow-bankl" class="arrow">&#x219D;</th>
         </tr>
+    
+        <tr><th>Government borrowing</th>
+          <th>
+            <button onclick="plusClick('govbor')" id="plus-govbor" class="pmCss">+</button>
+            <button onclick="minusClick('govbor')" id="minus-govbor" class="pmCss">-</button>
+          </th>
+          <th id="direction-govbor">Sideways</th>
+          <th id="arrow-govbor" class="arrow">&#x219D;</th>
+        </tr>
+
+        <tr><th>Fed balance sheet</th>
+          <th>
+            <button onclick="plusClick('fedbal')" id="plus-fedbal" class="pmCss">+</button>
+            <button onclick="minusClick('fedbal')" id="minus-fedbal" class="pmCss">-</button>
+          </th>
+          <th id="direction-fedbal">Sideways</th>
+          <th id="arrow-fedbal" class="arrow">&#x219D;</th>
+        </tr>
+          
+        <tr class="trUnderline">
+          <th>Reverse repo</th>
+          <th>
+            <button onclick="plusClick('revpo')" id="plus-revpo" class="pmCss">+</button>
+            <button onclick="minusClick('revpo')" id="minus-revpo" class="pmCss">-</button>
+          </th>
+          <th id="direction-revpo">Sideways</th>
+          <th id="arrow-revpo" class="arrow">&#x219D;</th>
+        </tr>
+        
+          <tr><th>BTC</th>
+            <th>
+              <button onclick="plusClick('btc')" id="plus-btc" class="pmCss">+</button>
+              <button onclick="minusClick('btc')" id="minus-btc" class="pmCss">-</button>
+            </th>
+            <th id="direction-btc">Sideways</th>
+            <th id="arrow-btc" class="arrow">&#x219D;</th>
+          </tr>
+
+          <tr class="trUnderline">
+            <th>ETH</th>
+            <th>
+              <button onclick="plusClick('eth')" id="plus-eth" class="pmCss">+</button>
+              <button onclick="minusClick('eth')" id="minus-eth" class="pmCss">-</button>
+            </th>
+            <th id="direction-eth">Sideways</th>
+            <th id="arrow-eth" class="arrow">&#x219D;</th>
+          </tr>
+          
         <tr>
           <th>Gold</th>
           <th>
@@ -170,22 +226,16 @@ th, td {
           <th id="direction-gold">Sideways</th>
           <th id="arrow-gold" class="arrow">&#x219D;</th>
         </tr>
-        <tr><th>ETH</th>
+
+        <tr><th>Inflation</th>
           <th>
-            <button onclick="plusClick('eth')" id="plus-eth" class="pmCss">+</button>
-            <button onclick="minusClick('eth')" id="minus-eth" class="pmCss">-</button>
+            <button onclick="plusClick('infl')" id="plus-infl" class="pmCss">+</button>
+            <button onclick="minusClick('infl')" id="minus-infl" class="pmCss">-</button>
           </th>
-          <th id="direction-eth">Sideways</th>
-          <th id="arrow-eth" class="arrow">&#x219D;</th>
+          <th id="direction-infl">Sideways</th>
+          <th id="arrow-infl" class="arrow">&#x219D;</th>
         </tr>
-        <tr><th>BTC</th>
-          <th>
-            <button onclick="plusClick('btc')" id="plus-btc" class="pmCss">+</button>
-            <button onclick="minusClick('btc')" id="minus-btc" class="pmCss">-</button>
-          </th>
-          <th id="direction-btc">Sideways</th>
-          <th id="arrow-btc" class="arrow">&#x219D;</th>
-        </tr>
+
         <tr><th>US rate</th>
           <th>
             <button onclick="plusClick('us-rate')" id="plus-us-rate" class="pmCss">+</button>
@@ -194,6 +244,7 @@ th, td {
           <th id="direction-us-rate">Sideways</th>
           <th id="arrow-us-rate" class="arrow">&#x219D;</th>
         </tr>
+
         <tr><th>Real interest</th>
           <th>
             <button onclick="plusClick('real-rate')" id="plus-real-rate" class="pmCss">+</button>
@@ -202,39 +253,8 @@ th, td {
           <th id="direction-real-rate">Sideways</th>
           <th id="arrow-real-rate" class="arrow">&#x219D;</th>
         </tr>
-        <tr><th>Real estate</th>
-          <th>
-            <button onclick="plusClick('real-estate')" id="plus-real-estate" class="pmCss">+</button>
-            <button onclick="minusClick('real-estate')" id="minus-real-estate" class="pmCss">-</button>
-          </th>
-          <th id="direction-real-estate">Sideways</th>
-          <th id="arrow-real-estate" class="arrow">&#x219D;</th>
-        </tr>
-        <tr><th>Oil</th>
-          <th>
-            <button onclick="plusClick('oil')" id="plus-oil" class="pmCss">+</button>
-            <button onclick="minusClick('oil')" id="minus-oil" class="pmCss">-</button>
-          </th>
-          <th id="direction-oil">Sideways</th>
-          <th id="arrow-oil" class="arrow">&#x219D;</th>
-        </tr>
-        <tr><th>Sentiment</th>
-          <th>
-            <button onclick="plusClick('sentiment')" id="plus-sentiment" class="pmCss">+</button>
-            <button onclick="minusClick('sentiment')" id="minus-sentiment" class="pmCss">-</button>
-          </th>
-          <th id="direction-sentiment">Sideways</th>
-          <th id="arrow-sentiment" class="arrow">&#x219D;</th>
-        <tr>
-          <th>M2</th>
-          <th>
-            <button onclick="plusClick('m2')" id="plus-m2" class="pmCss">+</button>
-            <button onclick="minusClick('m2')" id="minus-m2" class="pmCss">-</button>
-          </th>
-          <th id="direction-m2">Sideways</th>
-          <th id="arrow-m2" class="arrow">&#x219D;</th>
-        </tr>
-        <tr>
+
+        <tr class="trUnderline">
           <th>Unemployment</th>
           <th>
             <button onclick="plusClick('unemp')" id="plus-unemp" class="pmCss">+</button>
@@ -244,15 +264,65 @@ th, td {
           <th id="arrow-unemp" class="arrow">&#x219D;</th>
         </tr>
 
-        <tr><th></th><th></th><th></th></tr>
+        <tr><th>Real estate</th>
+          <th>
+            <button onclick="plusClick('real-estate')" id="plus-real-estate" class="pmCss">+</button>
+            <button onclick="minusClick('real-estate')" id="minus-real-estate" class="pmCss">-</button>
+          </th>
+          <th id="direction-real-estate">Sideways</th>
+          <th id="arrow-real-estate" class="arrow">&#x219D;</th>
+        </tr>
+
+        <tr><th>Oil</th>
+          <th>
+            <button onclick="plusClick('oil')" id="plus-oil" class="pmCss">+</button>
+            <button onclick="minusClick('oil')" id="minus-oil" class="pmCss">-</button>
+          </th>
+          <th id="direction-oil">Sideways</th>
+          <th id="arrow-oil" class="arrow">&#x219D;</th>
+        </tr>
+
+        <tr><th>Sentiment</th>
+          <th>
+            <button onclick="plusClick('sentiment')" id="plus-sentiment" class="pmCss">+</button>
+            <button onclick="minusClick('sentiment')" id="minus-sentiment" class="pmCss">-</button>
+          </th>
+          <th id="direction-sentiment">Sideways</th>
+          <th id="arrow-sentiment" class="arrow">&#x219D;</th>
+        </tr>
+
+        <tr class="trUnderline"><th>M2</th>
+          <th>
+            <button onclick="plusClick('m2')" id="plus-m2" class="pmCss">+</button>
+            <button onclick="minusClick('m2')" id="minus-m2" class="pmCss">-</button>
+          </th>
+          <th id="direction-m2">Sideways</th>
+          <th id="arrow-m2" class="arrow">&#x219D;</th>
+        </tr>
+
+        <tr><th></th><th></th><th></th><th></th></tr>
     </table>
 
     </th>
 
     </th>
-    <th id="dw-middle-right-cell">
+    <th id="dw-middle-right-cell-I">
 
-      <table id="dw-right-table">
+      <table id="dw-right-table-I">
+        <tr></tr>
+        <tr><th>BTC</th></tr>
+        <tr><th>ETH</th></tr>
+        <tr><th>Gold</th></tr>
+        <tr><th>Oil</th></tr>
+        <tr><th>Real estate</th></tr>
+        <tr></tr>
+      </table>
+
+    </th>
+
+    <th id="dw-middle-right-cell-II">
+
+      <table id="dw-right-table-II">
         <tr></tr>
         <tr><th>BTC</th></tr>
         <tr><th>ETH</th></tr>
@@ -267,11 +337,115 @@ th, td {
   <tr id="dw-bottom-row">
     <th id="dw-bottom-left-cell" class="dw-main-table-left"></th>
     <th id="dw-bottom-middle-cell"></th>
-    <th id="dw-bottom-right-cell"></th>
+    <th id="dw-bottom-right-cell-I"></th>
+    <th id="dw-bottom-right-cell-II"></th>
   </tr>
 </table>
 <br />
 <script>
+
+  // Input
+
+  var i_BTC = 0, x_BTC = 0, x2_BTC = 0;
+  var i_ETH = 0, x_ETH = 0, x2_ETH = 0;
+  var i_BankLending = 0, x_BankLending = 0, x2_BankLending = 0; // influences money supply
+  var i_FedBalanceSheet = 0, x_FedBalanceSheet = 0, x2_FedBalanceSheet = 0; // influences money supply
+  var i_Gold = 0, x_Gold = 0, x2_Gold = 0;
+  var i_GovernmentBorrowing = 0, x_GovernmentBorrowing = 0, x2_GovernmentBorrowing = 0;  // puts money in circulation
+  var i_Infl = 0, x_Infl = 0, x2_Infl = 0;
+  var i_M2 = 0, x_M2 = 0, x2_M2 = 0;  // influences inflation most
+  var i_Oil = 0, x_Oil = 0, x2_Oil = 0;
+  var i_RealEstate = 0, x_RealEstate = 0, x2_RealEstate = 0;
+  var i_RealInterest = 0, x_RealInterest = 0, x2_RealInterest = 0;
+  var i_ReverseRepo = 0, x_ReverseRepo = 0, x2_ReverseRepo = 0; // acts as a capacitor of money supply
+  var i_Sentiment = 0, x_Sentiment = 0, x2_Sentiment = 0;
+  var i_Unemployment = 0, x_Unemployment = 0, x2_Unemployment = 0;
+  var i_UsRate = 0, x_UsRate = 0, x2_UsRate = 0;
+
+  function updateData() {
+
+    i_BTC = windValue(document.getElementById("arrow-btc").innerHTML);
+    i_ETH = windValue(document.getElementById("arrow-eth").innerHTML);
+    i_BankLending = windValue(document.getElementById("arrow-bankl").innerHTML);
+    i_FedBalanceSheet = windValue(document.getElementById("arrow-fedbal").innerHTML);
+    i_Gold = windValue(document.getElementById("arrow-gold").innerHTML);
+    i_GovernmentBorrowing = windValue(document.getElementById("arrow-govbor").innerHTML);
+    i_Infl = windValue(document.getElementById("arrow-infl").innerHTML);
+    i_M2 = windValue(document.getElementById("arrow-m2").innerHTML);
+    i_Oil = windValue(document.getElementById("arrow-oil").innerHTML);
+    i_RealEstate = windValue(document.getElementById("arrow-realest").innerHTML);
+    i_RealInterest = windValue(document.getElementById("arrow-realint").innerHTML);
+    i_ReverseRepo = windValue(document.getElementById("arrow-revpo").innerHTML);
+    i_Sentiment = windValue(document.getElementById("arrow-sent").innerHTML);
+    i_Unemployment = windValue(document.getElementById("arrow-unmpl").innerHTML);
+    i_UsRate = windValue(document.getElementById("arrow-usrate").innerHTML);
+  
+    x_BTC = 0;
+    x_ETH = 0;
+    x_BankLending = 0;
+    x_FedBalanceSheet = 0;
+    x_Gold = 0;
+    x_GovernmentBorrowing = 0;
+    x_Infl = 0;
+    x_M2 = 0;
+    x_Oil = 0;
+    x_RealEstate = 0;
+    x_RealInterest = 0;
+    x_ReverseRepo = 0;
+    x_Sentiment = 0;
+    x_Unemployment = 0;
+    x_UsRate = 0;
+
+    x2_BTC = 0;
+    x2_ETH = 0;
+    x2_BankLending = 0;
+    x2_FedBalanceSheet = 0;
+    x2_Gold = 0;
+    x2_GovernmentBorrowing = 0;
+    x2_Infl = 0;
+    x2_M2 = 0;
+    x2_Oil = 0;
+    x2_RealEstate = 0;
+    x2_RealInterest = 0;
+    x2_ReverseRepo = 0;
+    x2_Sentiment = 0;
+    x2_Unemployment = 0;
+    x2_UsRate = 0;
+
+  }
+  
+  function m2(inBankLending, inGovBorrow, inFedBalSheet, inReverseRepo) {    
+    return (inBankLending + inGovBorrow - inFedBalSheet - inReverseRepo) / 4;
+  }
+
+  var x_BTC = 0;
+  var x_ETH = 0;
+
+  var x_Gold = 0;
+  var x_Infl = 0;
+  var x_UsRate = 0;
+  var x_RealInterest = 0;
+  var x_Unemployment = 0;
+
+  var x_RealEstate = 0;
+  var x_Oil = 0;
+  var x_Sentiment = 0;
+
+  function windValue(input) {
+    switch(input) {
+      case tail_wind:
+        return 1;
+      case mid_tail_wind:
+        return 0.5;
+      case sideways_wind:
+        return 0;
+      case mid_front_wind:
+        return -0.5;
+      case front_wind:
+        return -1;
+    }
+    return 0;
+  }
 
   function windText(input) {
     switch(input) {
