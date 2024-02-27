@@ -330,6 +330,34 @@ th, td {
     dirElem = document.getElementById("direction-"+suffix);
     dirElem.innerHTML = windText(arrowElem.innerHTML)
   }
+
+  const configs = []
+
+  function clearConfigs() {
+    if ( configs.length > 0 ) {
+      fruits.splice(0, configs.length);
+    }
+  }
+
+  const configPrefix = "DWCFG-";
+
+  function loadSavedConfigs() {
+    clearConfigs()
+    for(var i=0, len=localStorage.length; i<len; i++) {
+      var key = localStorage.key(i);
+      if ( key.startsWith(configPrefix) ) {
+        var value = localStorage[key];
+        var start = value.substring(0,configPrefix.length)
+      }
+    }
+  }  
+
+  function saveConfig(itemName) {
+
+  }
+
+
+
 </script>
 
 </body>
