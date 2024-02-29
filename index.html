@@ -181,6 +181,7 @@ th, td {
           <th class="cellRightBor">Trend</th>
           <th class="cellRightBor">Retrend</th>
         </tr>
+
         <tr><th class="cellRightBor">Bank lending</th>
           <th>
             <button onclick="plusClick('bankl')" id="plus-bankl" class="pmCss">+</button>
@@ -309,10 +310,10 @@ th, td {
         <tr class="trUnderline">
           <th class="cellRightBor">Unemployment</th>
           <th>
-            <button onclick="plusClick('unemp')" id="plus-unemp" class="pmCss">+</button>
-            <button onclick="minusClick('unemp')" id="minus-unemp" class="pmCss">-</button>
+            <button onclick="plusClick('unempl')" id="plus-unempl" class="pmCss">+</button>
+            <button onclick="minusClick('unempl')" id="minus-unempl" class="pmCss">-</button>
           </th>
-          <th id="direction-unemp">Sideways</th>
+          <th id="direction-unempl">Sideways</th>
           <th id="arrow-unempl" class="arrow cellRightBor">&#x219D;</th>
           <th id="fst-unempl" class="cellRightBor">0</th>
           <th id="snd-unempl" class="cellRightBor">0</th>
@@ -385,11 +386,13 @@ th, td {
   var i_GovernmentBorrowing = 0, x_GovernmentBorrowing = 0, x2_GovernmentBorrowing = 0;  // puts money in circulation
   var i_Infl = 0, x_Infl = 0, x2_Infl = 0;
   var i_M2 = 0, x_M2 = 0, x2_M2 = 0;  // influences inflation most
+  var i_Nasdaq = 0, x_Nasdaq = 0, x2_Nasdaq = 0;
   var i_Oil = 0, x_Oil = 0, x2_Oil = 0;
   var i_RealEstate = 0, x_RealEstate = 0, x2_RealEstate = 0;
   var i_RealInterest = 0, x_RealInterest = 0, x2_RealInterest = 0;
   var i_ReverseRepo = 0, x_ReverseRepo = 0, x2_ReverseRepo = 0; // acts as a capacitor of money supply
   var i_Sentiment = 0, x_Sentiment = 0, x2_Sentiment = 0;
+  var i_SnP500 = 0, x_SnP500 = 0, x2_SnP500 = 0;
   var i_Unemployment = 0, x_Unemployment = 0, x2_Unemployment = 0;
   var i_UsRate = 0, x_UsRate = 0, x2_UsRate = 0;
 
@@ -401,11 +404,13 @@ th, td {
   arrGovernmentBorrowingElem = document.getElementById("arrow-govbor");
   arrInflElem = document.getElementById("arrow-infl");
   arrM2Elem = document.getElementById("arrow-m2");
+  arrNasdaqElem = document.getElementById("arrow-nasdaq");
   arrOilElem = document.getElementById("arrow-oil");
   arrRealEstateElem = document.getElementById("arrow-real-estate");
   arrRealInterestElem = document.getElementById("arrow-real-rate");
   arrReverseRepoElem = document.getElementById("arrow-revpo");
   arrSentimentElem = document.getElementById("arrow-sentiment");
+  arrSnP500 = document.getElementById("arrow-snp500");
   arrUnemploymentElem = document.getElementById("arrow-unempl");
   arrUsRateElem = document.getElementById("arrow-us-rate");
 
@@ -417,10 +422,12 @@ th, td {
   fstGovernmentBorrowingElem = document.getElementById("fst-govbor");
   fstInflElem = document.getElementById("fst-infl");
   fstM2Elem = document.getElementById("fst-m2");
+  fstNasdaqElem = document.getElementById("fst-nasdaq");
   fstOilElem = document.getElementById("fst-oil");
   fstRealEstateElem = document.getElementById("fst-real-estate");
   fstRealInterestElem = document.getElementById("fst-real-rate");
   fstReverseRepoElem = document.getElementById("fst-revpo");
+  fstSnP500Elem = document.getElementById("fst-snp500");
   fstSentimentElem = document.getElementById("fst-sentiment");
   fstUnemploymentElem = document.getElementById("fst-unempl");
   fstUsRateElem = document.getElementById("fst-us-rate");
@@ -433,11 +440,13 @@ th, td {
   sndGovernmentBorrowingElem = document.getElementById("snd-govbor");
   sndInflElem = document.getElementById("snd-infl");
   sndM2Elem = document.getElementById("snd-m2");
+  sndNasdaqElem = document.getElementById("snd-nasdaq");
   sndOilElem = document.getElementById("snd-oil");
   sndRealEstateElem = document.getElementById("snd-real-estate");
   sndRealInterestElem = document.getElementById("snd-real-rate");
   sndReverseRepoElem = document.getElementById("snd-revpo");
   sndSentimentElem = document.getElementById("snd-sentiment");
+  sndSnP500Elem = document.getElementById("snd-snp500");
   sndUnemploymentElem = document.getElementById("snd-unempl");
   sndUsRateElem = document.getElementById("snd-us-rate");
 
@@ -588,19 +597,29 @@ th, td {
   }
 
   function plusClick(suffix) {
-    arrowElem = document.getElementById("arrow-"+suffix);
-    arrowElem.innerHTML = nextPlus(arrowElem.innerHTML);
-    dirElem = document.getElementById("direction-"+suffix);
-    dirElem.innerHTML = windText(arrowElem.innerHTML)
-    updateData();
+    try {
+      arrowElem = document.getElementById("arrow-"+suffix);
+      arrowElem.innerHTML = nextPlus(arrowElem.innerHTML);
+      dirElem = document.getElementById("direction-"+suffix);
+      dirElem.innerHTML = windText(arrowElem.innerHTML)
+      updateData();
+    } catch (error) {
+      console.error("Plus click: '" + suffix + "'")
+      console.error(error)
+    }    
   }
   
   function minusClick(suffix) {
-    arrowElem = document.getElementById("arrow-"+suffix);
-    arrowElem.innerHTML = nextMinus(arrowElem.innerHTML)
-    dirElem = document.getElementById("direction-"+suffix);
-    dirElem.innerHTML = windText(arrowElem.innerHTML)
-    updateData();
+    try {
+      arrowElem = document.getElementById("arrow-"+suffix);
+      arrowElem.innerHTML = nextMinus(arrowElem.innerHTML)
+      dirElem = document.getElementById("direction-"+suffix);
+      dirElem.innerHTML = windText(arrowElem.innerHTML)
+      updateData();
+    } catch (error) {
+      console.error("Plus click: '" + suffix + "'")
+      console.error(error)
+    }    
   }
 
   const configs = []
