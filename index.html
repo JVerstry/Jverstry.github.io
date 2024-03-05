@@ -37,7 +37,6 @@ a {
 a:hover {
   color: #E1492C;
 }
-
 button {
   padding-top: 1px;
   padding-bottom: 1px;
@@ -95,6 +94,15 @@ th, td {
   color: #FFFFFD;
   height: 30px;
 }
+#trendCol {
+  width: 70px;
+}
+#retrendCol {
+  width: 70px;
+}
+#tritrendCol {
+  width: 70px;
+}
 .trUnderline {
   border-bottom: 2pt solid #21283a;  
 }
@@ -150,6 +158,9 @@ th, td {
 [id^=snd-] {
   text-align: center;
 }
+[id^=thd-] {
+  text-align: center;
+}
 .textCenter {
   text-align: center;
 }
@@ -186,8 +197,9 @@ th, td {
           <th>&nbsp;</th>
           <th class="textCenter">Wind</th>
           <th class="cellRightBor">&nbsp;</th>
-          <th class="cellRightBor">Trend</th>
-          <th class="cellRightBor">Retrend</th>
+          <th id="trendCol" class="textCenter cellRightBor">Trend</th>
+          <th id="retrendCol" class="textCenter cellRightBor">Retrend</th>
+          <th id="tritrendCol" class="textCenter cellRightBor">Tritrend</th>
         </tr>
 
         <tr>
@@ -201,6 +213,7 @@ th, td {
           <th id="arrow-snp500" class="arrow cellRightBor">&#x219D;</th>
           <th id="fst-snp500" class="cellRightBor">0</th>
           <th id="snd-snp500" class="cellRightBor">0</th>
+          <th id="thd-snp500" class="cellRightBor">0</th>
         </tr>
 
         <tr class="trUnderline">
@@ -214,6 +227,7 @@ th, td {
             <th id="arrow-eth" class="arrow cellRightBor">&#x219D;</th>
             <th id="fst-eth" class="cellRightBor">0</th>
             <th id="snd-eth" class="cellRightBor">0</th>
+            <th id="thd-eth" class="cellRightBor">0</th>
           </tr>
           
         <tr>
@@ -227,7 +241,8 @@ th, td {
             <th id="arrow-us-gdp" class="arrow cellRightBor">&#x219D;</th>
             <th id="fst-us-gdp" class="cellRightBor">0</th>
             <th id="snd-us-gdp" class="cellRightBor">0</th>
-        </tr>
+            <th id="thd-us-gdp" class="cellRightBor">0</th>
+          </tr>
   
         <tr>
           <th class="cellRightBor"><a href="https://fred.stlouisfed.org/series/GFDEBTN"
@@ -240,6 +255,7 @@ th, td {
           <th id="arrow-us-debt" class="arrow cellRightBor">&#x219D;</th>
           <th id="fst-us-debt" class="cellRightBor">0</th>
           <th id="snd-us-debt" class="cellRightBor">0</th>
+          <th id="thd-us-debt" class="cellRightBor">0</th>
         </tr>
 
         <tr>
@@ -253,6 +269,7 @@ th, td {
           <th id="arrow-infl" class="arrow cellRightBor">&#x219D;</th>
           <th id="fst-infl" class="cellRightBor">0</th>
           <th id="snd-infl" class="cellRightBor">0</th>
+          <th id="thd-infl" class="cellRightBor">0</th>
         </tr>
 
         <tr>
@@ -266,6 +283,7 @@ th, td {
           <th id="arrow-us-rate" class="arrow cellRightBor">&#x219D;</th>
           <th id="fst-us-rate" class="cellRightBor">0</th>
           <th id="snd-us-rate" class="cellRightBor">0</th>
+          <th id="thd-us-rate" class="cellRightBor">0</th>
         </tr>
 
         <tr class="trUnderline">
@@ -279,6 +297,7 @@ th, td {
           <th id="arrow-real-rate" class="arrow cellRightBor">&#x219D;</th>
           <th id="fst-real-rate" class="cellRightBor">0</th>
           <th id="snd-real-rate" class="cellRightBor">0</th>
+          <th id="thd-real-rate" class="cellRightBor">0</th>
         </tr>
 
         <tr>
@@ -292,6 +311,7 @@ th, td {
           <th id="arrow-gold" class="arrow cellRightBor">&#x219D;</th>
           <th id="fst-gold" class="cellRightBor">0</th>
           <th id="snd-gold" class="cellRightBor">0</th>
+          <th id="thd-gold" class="cellRightBor">0</th>
         </tr>
 
 
@@ -306,6 +326,7 @@ th, td {
           <th id="arrow-bonds" class="arrow cellRightBor">&#x219D;</th>
           <th id="fst-bonds" class="cellRightBor">0</th>
           <th id="snd-bonds" class="cellRightBor">0</th>
+          <th id="thd-bonds" class="cellRightBor">0</th>
         </tr>
         
         <tr>
@@ -319,6 +340,7 @@ th, td {
           <th id="arrow-real-estate" class="arrow cellRightBor">&#x219D;</th>
           <th id="fst-real-estate" class="cellRightBor">0</th>
           <th id="snd-real-estate" class="cellRightBor">0</th>
+          <th id="thd-real-estate" class="cellRightBor">0</th>
         </tr>
 
         <tr class="trUnderline">
@@ -332,6 +354,7 @@ th, td {
           <th id="arrow-oil" class="arrow cellRightBor">&#x219D;</th>
           <th id="fst-oil" class="cellRightBor">0</th>
           <th id="snd-oil" class="cellRightBor">0</th>
+          <th id="thd-oil" class="cellRightBor">0</th>
         </tr>
 
         <tr>
@@ -345,6 +368,7 @@ th, td {
           <th id="arrow-sentiment" class="arrow cellRightBor">&#x219D;</th>
           <th id="fst-sentiment" class="cellRightBor">0</th>
           <th id="snd-sentiment" class="cellRightBor">0</th>
+          <th id="thd-sentiment" class="cellRightBor">0</th>
         </tr>
 
         <tr class="trUnderline">
@@ -358,6 +382,7 @@ th, td {
           <th id="arrow-unempl" class="arrow cellRightBor">&#x219D;</th>
           <th id="fst-unempl" class="cellRightBor">0</th>
           <th id="snd-unempl" class="cellRightBor">0</th>
+          <th id="thd-unempl" class="cellRightBor">0</th>
         </tr>
         
         <tr>
@@ -371,6 +396,7 @@ th, td {
           <th id="arrow-bankl" class="arrow cellRightBor">&#x219D;</th>
           <th id="fst-bankl" class="cellRightBor">0</th>
           <th id="snd-bankl" class="cellRightBor">0</th>
+          <th id="thd-bankl" class="cellRightBor">0</th>
         </tr>
     
         <tr>
@@ -384,6 +410,7 @@ th, td {
           <th id="arrow-govbor" class="arrow cellRightBor">&#x219D;</th>
           <th id="fst-govbor" class="cellRightBor">0</th>
           <th id="snd-govbor" class="cellRightBor">0</th>
+          <th id="thd-govbor" class="cellRightBor">0</th>
         </tr>
 
         <tr>
@@ -397,6 +424,7 @@ th, td {
           <th id="arrow-fedbal" class="arrow cellRightBor">&#x219D;</th>
           <th id="fst-fedbal" class="cellRightBor">0</th>
           <th id="snd-fedbal" class="cellRightBor">0</th>
+          <th id="thd-fedbal" class="cellRightBor">0</th>
         </tr>
           
         <tr>
@@ -410,6 +438,7 @@ th, td {
           <th id="arrow-revpo" class="arrow cellRightBor">&#x219D;</th>
           <th id="fst-revpo" class="cellRightBor">0</th>
           <th id="snd-revpo" class="cellRightBor">0</th>
+          <th id="thd-revpo" class="cellRightBor">0</th>
         </tr>
         
         <tr class="trUnderline">
@@ -423,7 +452,8 @@ th, td {
           <th id="arrow-m2" class="arrow cellRightBor">&#x219D;</th>
           <th id="fst-m2" class="cellRightBor">0</th>
           <th id="snd-m2" class="cellRightBor">0</th>
-        </tr>        
+          <th id="thd-m2" class="cellRightBor">0</th>
+        </tr>
 
         <tr class="trUnderline">
           <th class="cellRightBor">War</th>
@@ -433,8 +463,9 @@ th, td {
           </th>
           <th id="direction-war">Sideways</th>
           <th id="arrow-war" class="arrow cellRightBor">&#x219D;</th>
-          <th id="fst-war" class="cellRightBor">0</th>
-          <th id="snd-war" class="cellRightBor">0</th>
+          <th id="fst-war" class="cellRightBor">-</th>
+          <th id="snd-war" class="cellRightBor">-</th>
+          <th id="thd-war" class="cellRightBor">-</th>
         </tr>   
         
         <tr><th></th><th></th><th></th><th></th></tr>
@@ -551,7 +582,29 @@ th, td {
   sndUsRateElem = document.getElementById("snd-us-rate");
   sndWarElem = document.getElementById("snd-war");
 
-  function updateData() {
+  /* thdBTCElem = document.getElementById("thd-btc"); */
+  thdETHElem = document.getElementById("thd-eth");
+  thdBankLendingElem = document.getElementById("thd-bankl");
+  thdBondsElem = document.getElementById("thd-bonds");
+  thdFedBalanceSheetElem = document.getElementById("thd-fedbal");
+  thdGoldElem = document.getElementById("thd-gold");
+  thdGovernmentBorrowingElem = document.getElementById("thd-govbor");
+  thdInflElem = document.getElementById("thd-infl");
+  thdM2Elem = document.getElementById("thd-m2");
+  /* thdNasdaqElem = document.getElementById("thd-nasdaq"); */
+  thdOilElem = document.getElementById("thd-oil");
+  thdRealEstateElem = document.getElementById("thd-real-estate");
+  thdRealInterestElem = document.getElementById("thd-real-rate");
+  thdReverseRepoElem = document.getElementById("thd-revpo");
+  thdSentimentElem = document.getElementById("thd-sentiment");
+  thdSnP500Elem = document.getElementById("thd-snp500");
+  thdUnemploymentElem = document.getElementById("thd-unempl");
+  thdUsDebtElem = document.getElementById("thd-us-debt");
+  thdUsGDPElem = document.getElementById("thd-us-gdp");
+  thdUsRateElem = document.getElementById("thd-us-rate");
+  thdWarElem = document.getElementById("thd-war");
+
+function updateData() {
 
     /* i_BTC = windValue(arrBTCElem.innerHTML); */
     i_ETH = windValue(arrETHElem.innerHTML);
@@ -623,6 +676,30 @@ th, td {
     x2_UsRate = x_UsRate;
     x2_War = x_War;
     
+    /* x3_BTC = 0.8 * x2_ETH + x2_M2 + 0.25 * x2_Infl - x2_Sentiment; */
+    x3_ETH = x2_M2 + 0.25 * x2_Infl - x2_Sentiment;
+    x3_BankLending = 0 - x2_UsRate;
+    x3_Bonds = x_UsRate + x2_GovernmentBorrowing;
+    x3_FedBalanceSheet = x2_FedBalanceSheet;
+    x3_Gold = x2_M2 - x2_RealInterest + x2_War + x2_UsDebt;
+    x3_GovernmentBorrowing = 0 - x2_UsRate + x2_UsDebt;
+    x3_Infl = x2_M2 - x2_UsRate;
+    x3_M2 = x2_BankLending + x2_GovernmentBorrowing + x2_FedBalanceSheet - x2_ReverseRepo
+          + x2_UsDebt;
+    /* x3_Nasdaq = x2_M2 - x2_UsRate + x2_UsGDP; */
+    x3_Oil = x2_UsGDP;
+    x3_RealEstate = x2_Infl - x2_UsRate - x2_Unemployment;
+    x3_RealInterest = x2_UsRate - x2_Infl;
+    x3_ReverseRepo = i_ReverseRepo;
+    x3_Sentiment = 0 - x2_Infl - x2_Unemployment - x2_UsDebt
+                 + 0.5 * x2_SnP500 + x2_RealEstate;
+    x3_SnP500 = x_M2 - x2_UsRate;
+    x3_Unemployment = 0 - x2_UsGDP;
+    x3_UsDebt = 0 - x2_UsRate + x2_GovernmentBorrowing + x2_War;
+    x3_UsGDP = 0 - x2_Oil - x2_War + x2_Sentiment + 0.5 * x2_GovernmentBorrowing;
+    x3_UsRate = x2_UsRate;
+    x3_War = x2_War;
+
     // Update 
 
     /* fstBTCElem.innerHTML = x_BTC.toFixed(2); */
@@ -668,6 +745,28 @@ th, td {
     sndUsGDPElem = x2_UsGDP.toFixed(2);
     sndUsRateElem = x2_UsRate.toFixed(2);
     sndWarElem = x2_War.toFixed(2);
+
+    /* thdBTCElem.innerHTML = x3_BTC.toFixed(2); */
+    thdETHElem.innerHTML = x3_ETH.toFixed(2);
+    thdBankLendingElem.innerHTML = x3_BankLending.toFixed(2);
+    thdBondsElem.innerHTML = x3_Bonds.toFixed(2);
+    thdFedBalanceSheetElem.innerHTML = x3_FedBalanceSheet.toFixed(2);
+    thdGoldElem.innerHTML = x3_Gold.toFixed(2);
+    thdGovernmentBorrowingElem.innerHTML = x3_GovernmentBorrowing.toFixed(2);
+    thdInflElem.innerHTML = x3_Infl.toFixed(2);
+    thdM2Elem.innerHTML = x3_M2.toFixed(2);
+    /* thdNasdaqElem.innerHTML = x3_Nasdaq.toFixed(2); */
+    thdOilElem.innerHTML = x3_Oil.toFixed(2);
+    thdRealEstateElem.innerHTML = x3_RealEstate.toFixed(2);
+    thdRealInterestElem.innerHTML = x3_RealInterest.toFixed(2);
+    thdReverseRepoElem = x3_ReverseRepo.toFixed(2);
+    thdSentimentElem = x3_Sentiment.toFixed(2);
+    thdSnP500Elem.innerHTML = x3_SnP500.toFixed(2);
+    thdUnemploymentElem = x3_Unemployment.toFixed(2);
+    thdUsDebtElem = x3_UsDebt.toFixed(2);
+    thdUsGDPElem = x3_UsGDP.toFixed(2);
+    thdUsRateElem = x3_UsRate.toFixed(2);
+    thdWarElem = x3_War.toFixed(2);
 
   }
 
@@ -782,9 +881,6 @@ th, td {
 
   }
 
-
-
 </script>
-
 </body>
 </html>
